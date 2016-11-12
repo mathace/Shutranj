@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OtherPoker", "OtherPoker\OtherPoker.csproj", "{8E210D20-158C-44F4-BDE1-EC936C1613DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Poker", "Poker\Poker.csproj", "{CBE401E7-54A6-4C42-B671-6C0C87D74DDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadugiRangeAnalyserGUI", "BadugiRangeAnalyserGUI\BadugiRangeAnalyserGUI.csproj", "{3D7387AA-1EA7-4ED5-B42C-66BB16B3E088}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8E210D20-158C-44F4-BDE1-EC936C1613DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E210D20-158C-44F4-BDE1-EC936C1613DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E210D20-158C-44F4-BDE1-EC936C1613DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E210D20-158C-44F4-BDE1-EC936C1613DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBE401E7-54A6-4C42-B671-6C0C87D74DDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE401E7-54A6-4C42-B671-6C0C87D74DDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE401E7-54A6-4C42-B671-6C0C87D74DDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE401E7-54A6-4C42-B671-6C0C87D74DDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D7387AA-1EA7-4ED5-B42C-66BB16B3E088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D7387AA-1EA7-4ED5-B42C-66BB16B3E088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D7387AA-1EA7-4ED5-B42C-66BB16B3E088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D7387AA-1EA7-4ED5-B42C-66BB16B3E088}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

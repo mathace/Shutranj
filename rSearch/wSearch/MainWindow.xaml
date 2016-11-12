@@ -1,0 +1,50 @@
+﻿<Window x:Class="wSearch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wSearch"
+        mc:Ignorable="d"
+        Title="wSearch" Height="645.046" Width="747.888" DataContext="{Binding MainCatalog.BBDatasList}">
+    <Window.Resources>
+        <local:StringToComponentConverter x:Key="stringtocompconverter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="85"/>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListView x:Name="bblistbox" Height="586"  VerticalAlignment="Top" Width="73" ItemsSource="{Binding MainCatalog.BBDatasList}" Background="Transparent" BorderThickness="0" Grid.Column="0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Width="50" Text="{Binding BB}" FontWeight="Bold"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="poslistbox" HorizontalAlignment="Left" Height="529" VerticalAlignment="Top" Width="45" ItemsSource="{Binding ElementName=bblistbox, Path=SelectedItem.PosDataList}"  Background="Transparent" BorderThickness="0" Grid.Column="1">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Width="30" Text="{Binding Position}" FontWeight="Bold"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="actionlistbox" HorizontalAlignment="Left" Height="529" VerticalAlignment="Top" Width="120" ItemsSource="{Binding ElementName=poslistbox, Path=SelectedItem.ActionDataList}"  Background="Transparent" BorderThickness="0" Grid.Column="2">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding ActionString}" FontWeight="Bold"/>
+                        <TextBlock>
+                            <Run Text=" "/>
+                            <Run Text="{Binding Players}" FontSize="14"/>
+                        </TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Image x:Name="image" HorizontalAlignment="Left" VerticalAlignment="Top" Source="{Binding ElementName=actionlistbox, Path=SelectedItem.ActionPath, Converter={StaticResource stringtocompconverter}}" Grid.Column="3"/>        
+
+
+    </Grid>
+</Window>

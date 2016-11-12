@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="PIOSpots.Pages.spotlistPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:PIOSpots.Pages"
+             xmlns:view="clr-namespace:PIOSpots.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="1000">
+    <Grid Style="{StaticResource ContentRoot}" Margin="0,10,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="65"/>
+        </Grid.RowDefinitions>        
+            <view:spotListView DataContext="{Binding}" Grid.Row="0"/>
+            <StackPanel Orientation="Vertical" Grid.Row="2">
+                <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+            </StackPanel>
+            <view:SpotItemView DataContext="{Binding NewSpot}"  Grid.Row="3" Margin="0,15,0,15"/>
+            <StackPanel Orientation="Vertical" Grid.Row="4">
+                <Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" />
+            </StackPanel>
+            <StackPanel Grid.Row="5" Orientation="Horizontal">
+            <Button Content="Add New spot" Margin="15" Command="{Binding AddNewSpotCommand}"/>
+            <Button Content="Remove Selected spot" Margin="15" Command="{Binding RemovespotCommand}"/>
+            <Button Content="Save" Margin="200,15,0,15" Command="{Binding SavespotListCommand}"/>
+        </StackPanel>
+
+
+
+    </Grid>
+</UserControl>

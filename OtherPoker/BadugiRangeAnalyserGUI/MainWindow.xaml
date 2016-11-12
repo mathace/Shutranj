@@ -1,0 +1,48 @@
+﻿<Window x:Class="BadugiRangeAnalyserGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BadugiRangeAnalyserGUI"
+        mc:Ignorable="d"
+        Title="Badugi Range Analyser" Height="639.453" Width="667.13">
+    <Grid>
+        <ListBox x:Name="allRangesListBox" HorizontalAlignment="Left" Height="142" Margin="15,17,0,0" VerticalAlignment="Top" Width="142" SelectionMode="Multiple" SelectionChanged="allRangesListBox_SelectionChanged"/>
+        <TextBox x:Name="rangeNameTextBox" HorizontalAlignment="Left" Height="23" Margin="104,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="minHandTextBox" HorizontalAlignment="Left" Height="23" Margin="103,275,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="maxHandTextBox" HorizontalAlignment="Left" Height="23" Margin="103,303,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Bottomhand" HorizontalAlignment="Left" Height="23" Margin="15,275,0,0" VerticalAlignment="Top" Width="81"/>
+        <Label x:Name="label_Copy" Content="Name" HorizontalAlignment="Left" Height="23" Margin="15,247,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label x:Name="label_Copy1" Content="Tophand" HorizontalAlignment="Left" Height="26" Margin="15,300,0,0" VerticalAlignment="Top" Width="73" RenderTransformOrigin="0.129,2.677"/>
+        <Button x:Name="button" Content="Add range" HorizontalAlignment="Left" Margin="58,331,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button1" Content="Set as Parent (multiselection allowed)" HorizontalAlignment="Left" Margin="13,164,0,0" VerticalAlignment="Top" Width="144" Height="26" FontSize="8" Click="button1_Click" Background="#FF5AE0DA"/>
+        <Button x:Name="button2" Content="Add as Child" HorizontalAlignment="Left" Margin="13,195,0,0" VerticalAlignment="Top" Width="144" Click="button2_Click"/>
+        <Label x:Name="label1" Content="Parent" HorizontalAlignment="Left" Margin="233,17,0,0" VerticalAlignment="Top" Width="58" FontWeight="Bold"/>
+        <Button x:Name="button3" Content="Delete range" HorizontalAlignment="Left" Margin="15,222,0,0" VerticalAlignment="Top" Width="142" Background="#FFFD9696" Click="button3_Click"/>
+        <TextBox x:Name="parentCountTextBox" HorizontalAlignment="Left" Height="23" Margin="233,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" IsReadOnly="True"/>
+        <Label x:Name="label_Copy5" Content="Count" HorizontalAlignment="Left" Height="26" Margin="177,48,0,0" VerticalAlignment="Top" Width="46" RenderTransformOrigin="0.129,2.677"/>
+        <Label x:Name="label1_Copy" Content="Children" HorizontalAlignment="Left" Margin="233,79,0,0" VerticalAlignment="Top" Width="58" FontWeight="Bold"/>
+        <ListBox x:Name="childrenRangesListbox" HorizontalAlignment="Left" Height="142" Margin="233,113,0,0" VerticalAlignment="Top" Width="187"/>
+        <Button x:Name="button3_Copy" Content="Remove selected" HorizontalAlignment="Left" Margin="233,266,0,0" VerticalAlignment="Top" Width="105" Background="#FFFD9696" Click="button3_Copy_Click"/>
+        <Button x:Name="button3_Copy1" Content="Remove all" HorizontalAlignment="Left" Margin="347,266,0,0" VerticalAlignment="Top" Width="73" Background="#FFFD9696" Click="button3_Copy1_Click"/>
+        <TextBox x:Name="rangeNameTextBox2" HorizontalAlignment="Left" Height="23" Margin="104,370,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="rangeTypeTextBox" HorizontalAlignment="Left" Height="23" Margin="103,398,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="rangeCardsTextBox" HorizontalAlignment="Left" Height="23" Margin="103,426,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label_Copy6" Content="Type(1,2,3,4)" HorizontalAlignment="Left" Height="29" Margin="15,397,0,0" VerticalAlignment="Top" Width="88"/>
+        <Label x:Name="label_Copy7" Content="Name" HorizontalAlignment="Left" Height="23" Margin="15,370,0,0" VerticalAlignment="Top" Width="58"/>
+        <Label x:Name="label_Copy8" Content="Cards(A52)" HorizontalAlignment="Left" Height="26" Margin="15,423,0,0" VerticalAlignment="Top" Width="73" RenderTransformOrigin="0.129,2.677"/>
+        <Button x:Name="button_Copy" Content="Add range" HorizontalAlignment="Left" Margin="58,462,0,0" VerticalAlignment="Top" Width="75" Click="button_Copy_Click"/>
+        <TextBox x:Name="reportTextBox" HorizontalAlignment="Left" Height="496" Margin="432,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="193" AcceptsReturn="True" IsReadOnly="True"/>
+        <Button x:Name="button4" Content="Generate Report" HorizontalAlignment="Left" Height="36" Margin="233,295,0,0" VerticalAlignment="Top" Width="187" Background="#FFAFE89E" Click="button4_Click"/>
+        <Button x:Name="button4_Copy" Content="Save changes and Exit" HorizontalAlignment="Left" Height="51" Margin="233,462,0,0" VerticalAlignment="Top" Width="187" Background="#FFBBD9F7" Click="button4_Copy_Click"/>
+        <TextBox x:Name="parentNameTextBox" HorizontalAlignment="Left" Height="23" Margin="282,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" IsReadOnly="True"/>
+        <TextBox x:Name="questionTypeTextBox" HorizontalAlignment="Left" Height="23" Margin="321,351,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99"/>
+        <TextBox x:Name="questionCardsTextBox" HorizontalAlignment="Left" Height="23" Margin="321,379,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="99"/>
+        <Label x:Name="label_Copy2" Content="Type(1,2,3,4)" HorizontalAlignment="Left" Height="29" Margin="233,350,0,0" VerticalAlignment="Top" Width="88"/>
+        <Label x:Name="label_Copy3" Content="Cards(A52)" HorizontalAlignment="Left" Height="26" Margin="233,376,0,0" VerticalAlignment="Top" Width="73" RenderTransformOrigin="0.129,2.677"/>
+        <Button x:Name="askQuestionButton" Content="Ask!" HorizontalAlignment="Left" Height="36" Margin="233,413,0,0" VerticalAlignment="Top" Width="187" Background="#FF58D194" Click="askQuestionButton_Click"/>
+        <TextBox x:Name="percentageofalltextbox" HorizontalAlignment="Left" Height="23" Margin="347,79,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="73" IsReadOnly="True"/>
+        <Label x:Name="label_Copy4" Content="% of all" HorizontalAlignment="Left" Height="26" Margin="296,79,0,0" VerticalAlignment="Top" Width="53" RenderTransformOrigin="0.129,2.677"/>
+
+    </Grid>
+</Window>

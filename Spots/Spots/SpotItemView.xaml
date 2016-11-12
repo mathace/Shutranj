@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="Spots.SpotItemView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Spots"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel Orientation="Horizontal" DataContext="{Binding}">
+        <TextBlock Text="Game"/>
+        <TextBox Width="60" Text="{Binding GameType}"/>
+        <TextBlock Text="Spot"/>
+        <TextBox Width="60" Text="{Binding Description}"/>
+        <TextBlock Text="Folder"/>
+        <TextBox Width="60" Text="{Binding FolderPath}"/>
+        <TextBlock Text="OOPName"/>
+        <TextBox Width="60" Text="{Binding OOPName}"/>
+        <TextBlock Text="OOP Pos"/>
+        <TextBox Width="60" Text="{Binding OOPPosition}"/>
+        <TextBlock Text="IPName"/>
+        <TextBox Width="60" Text="{Binding IPName}"/>
+        <TextBlock Text="IP Pos"/>
+        <TextBox Width="60" Text="{Binding IPPosition}"/>
+        <TextBlock Text="BB"/>
+        <TextBox Width="60" Text="{Binding BB}"/>
+    </StackPanel>
+</UserControl>

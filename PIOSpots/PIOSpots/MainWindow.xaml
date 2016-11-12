@@ -1,0 +1,26 @@
+﻿<mui:ModernWindow x:Class="PIOSpots.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ignore="http://www.galasoft.cs/ignore"
+        xmlns:local="clr-namespace:PIOSpots"   
+        xmlns:pages="clr-namespace:PIOSpots.Pages"
+        xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+        mc:Ignorable="d ignore"
+        Height="1100"
+        Width="1400"
+        Title="spots"                  
+        DataContext="{Binding Main, Source={StaticResource Locator}}">
+    <mui:ModernWindow.MenuLinkGroups>
+        <mui:LinkGroup DisplayName="spots">
+        <mui:LinkGroup.Links>
+            <mui:Link DisplayName="spotlist" Source="/Pages/spotlistPage.xaml"/>
+            <mui:Link DisplayName="session" Source="/Pages/SessionPage.xaml"/>
+            <mui:Link DisplayName="game" Source="/Pages/PlayPage.xaml"/>
+            <mui:Link DisplayName="results" Source="/Pages/ResultsPage.xaml"/>
+            <mui:Link DisplayName="settings" Source="/Pages/SettingsPage.xaml"/>
+            </mui:LinkGroup.Links>
+        </mui:LinkGroup>
+    </mui:ModernWindow.MenuLinkGroups>
+</mui:ModernWindow>

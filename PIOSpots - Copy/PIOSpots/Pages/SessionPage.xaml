@@ -1,0 +1,39 @@
+﻿<UserControl x:Class="PIOSpots.Pages.SessionPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:mui="http://firstfloorsoftware.com/ModernUI"
+             xmlns:core="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:PIOSpots.Pages"
+             xmlns:model="clr-namespace:PIOSpots.Model"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Style="{StaticResource ContentRoot}" Margin="0,10,0,0">
+        <Grid.Resources>
+            <!--Create list of enumeration values-->
+            <ObjectDataProvider x:Key="myEnum" MethodName="GetValues" ObjectType="{x:Type core:Enum}">
+                <ObjectDataProvider.MethodParameters>
+                    <x:Type Type="model:HeroType"/>
+                </ObjectDataProvider.MethodParameters>
+            </ObjectDataProvider>
+        </Grid.Resources>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <TextBlock DockPanel.Dock="Top" Text="Select SPOTS" Style="{StaticResource Heading2}" Margin="0,0,0,8" Grid.Row="0"/>
+            <DataGrid Name="DG1" ItemsSource="{Binding SpotList}" AutoGenerateColumns="False" Grid.Row="1">
+                <DataGrid.Columns>
+                    <mui:DataGridTextColumn Header="Game"  Binding="{Binding GameType}"/>
+                    <mui:DataGridTextColumn Header="Description" Binding="{Binding Description}" />
+                    <mui:DataGridComboBoxColumn Header="Hero" SelectedItemBinding="{Binding Herotype}" ItemsSource="{Binding Source={StaticResource myEnum}}" />
+                </DataGrid.Columns>
+            </DataGrid>
+        <Grid Grid.Row="2" Margin="10,0,0,10">
+            <!--<Button Content="Start" Width="70" HorizontalAlignment="Left"/>-->
+            <Button Content="Remember Settings" Width="200" Margin="10,0,0,0" Command="{Binding SaveSpotListCommand}"/>
+        </Grid>
+    </Grid>
+</UserControl>
